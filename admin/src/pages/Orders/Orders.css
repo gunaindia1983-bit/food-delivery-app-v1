@@ -1,13 +1,21 @@
+.order-add h3{
+    color: tomato;
+    align-items: center;
+    display: flex;
+    font-size: 30px;
+    padding: 10px 20px ;
+}
+
 .order-item{
     display: grid;
     grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
     align-items: start;
     gap: 30px;
     border: 1px solid tomato;
-    padding: 20px;
-    margin: 30px 0px;
+    padding: 10px 10px;
+    margin: 10px 20px;
     font-size: 14px;
-    color: #505050;
+    color: black;
 }
 .order-item-food, .order-item-name{
     font-weight: 600;
