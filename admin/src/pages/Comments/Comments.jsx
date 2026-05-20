@@ -8,7 +8,7 @@ const Comments = () => {
 
 
     const fetchData = async () =>{
-    const response = await axios.get("http://localhost:4000/api/food/sentiment",{});
+    const response = await axios.get("https://food-delivery-backend-lou8.onrender.com/api/food/sentiment",{});
     if(response.data.data){
         setData(response.data.data)
 
