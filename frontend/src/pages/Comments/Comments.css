@@ -1,0 +1,41 @@
+
+.comments-food-item{
+    display: grid;
+    grid-template-columns: 2fr 2fr 5fr 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: lightgray;
+}
+
+.comments-food-item img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.comments-food-item textarea{
+    display:block;
+    justify-content: left;
+    width: 600px;
+    height: 80px;
+    font-size: medium; 
+    cursor:auto; 
+    border:1px solid tomato;
+    resize: vertical;
+    font-family: inherit;
+
+}
+
+
+.comments-food-item button{
+    background-color: tomato;
+    font-size: 15px;
+    color: white;
+    border: none;
+    width:110px;
+    height: 30px;
+    /* padding: .01px .01px; */
+    cursor: pointer;
+    border-radius: 4px;
+}
