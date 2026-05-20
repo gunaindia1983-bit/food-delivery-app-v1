@@ -81,6 +81,11 @@ food-delivery-app-v1/
 - Update styles in the respective CSS files
 - Refer to React documentation for best practices
 
+## 👤🧠 Sentiment Analysis
+- Customer review comments are passed to NLP Senitment Analysis model built using Sklearn that categorizes the sentiment as 'Postive', 'Negative' or 'Neutral'
+- The sentiments are available on 'Admin Portal'
+- The sentiments are Star rated(★★★★☆) and Color coded
+
 ## 🎨 Customization
 
 ### Colors & Branding
@@ -103,7 +108,6 @@ food-delivery-app-v1/
 - [ ] User authentication & profiles
 - [ ] Real-time order tracking
 - [ ] Reviews and ratings system
-- [ ] Admin dashboard
 - [ ] Multiple location support
 
 ## 🤝 Contributing
