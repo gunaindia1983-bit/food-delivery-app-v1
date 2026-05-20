@@ -1,8 +1,11 @@
+import { now,Types } from "mongoose";
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+
 
 // placing user order for frontend
 const placeOrder = async (req, res) => {
@@ -64,15 +67,16 @@ const verifyOrder = async (req, res) => {
       res.json({ success: false, message: "Not Paid" });
     }
   } catch (error) {
-    console.log(error);
     res.json({ success: false, message: "Error" });
   }
 };
 
 // user orders for frontend
 const userOrders = async (req, res) => {
+
   try {
-    const orders = await orderModel.find({ userId: req.body.userId });
+
+    const orders = await orderModel.find({ userid: req.body.userId });
     res.json({ success: true, data: orders });
   } catch (error) {
     console.log(error);
@@ -83,6 +87,8 @@ const userOrders = async (req, res) => {
 // Listing orders for admin pannel
 const listOrders = async (req, res) => {
   try {
+
+    //let userData = true;
     let userData = await userModel.findById(req.body.userId);
     if (userData && userData.role === "admin") {
       const orders = await orderModel.find({});
@@ -98,9 +104,15 @@ const listOrders = async (req, res) => {
 
 // api for updating status
 const updateStatus = async (req, res) => {
+  let userData = await userModel.findById(req.body.userId);
+      
   try {
+    //let userData = true;
     let userData = await userModel.findById(req.body.userId);
-    if (userData && userData.role === "admin") {
+    
+    if (userData && userData.role === "admin" ) {
+
+      
       await orderModel.findByIdAndUpdate(req.body.orderId, {
         status: req.body.status,
       });
@@ -109,9 +121,23 @@ const updateStatus = async (req, res) => {
       res.json({ success: false, message: "You are not an admin" });
     }
   } catch (error) {
+    
     console.log(error);
     res.json({ success: false, message: "Error" });
   }
 };
 
-export { placeOrder, verifyOrder, userOrders, listOrders, updateStatus };
+//list selected order for comments
+const selectedOrder = async(req,res)=>{
+  console.log(Date(),req.body._id);
+  try {
+    
+    const orderData = await orderModel.findById({_id:req.body._id});
+    res.json({success:true,data:orderData});
+    
+  } catch (error) {
+    res.json({success:false,message:"Error"});
+    
+  }
+}
+export { placeOrder, verifyOrder, userOrders, listOrders, updateStatus,selectedOrder };
