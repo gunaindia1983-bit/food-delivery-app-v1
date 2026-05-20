@@ -9,7 +9,7 @@ const Sentiments = () => {
 
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:4000/api/food/sentiment", {});
+    const response = await axios.get("https://food-delivery-backend-lou8.onrender.com/api/food/sentiment", {});
     if (response.data.data) {
 
       const responseData = response.data.data
