@@ -1,17 +1,43 @@
+
+
+
+
+.list-and-flex-col h3{
+    color: tomato;
+    align-items: center;
+    display: flex;
+    font-size: 30px;
+    padding: 20px 20px ;
+}
+
 .list-table-format{
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
-    align-items: center;
+    grid-template-columns: 2fr 2fr 2fr 2fr 1fr 1fr;
+    align-items:stretch;
     gap: 10px;
-    padding: 12px 15px;
-    border: 1px solid #cacaca;
-    font-size: 13px;
+    padding: 20px 20px;
+    border: 1px solid lightblue;
+    font-size: 20px;
+    color: black;
 }
 .list-table-format.title{
-    background-color: #f9f9f9;
+    background-color: lightblue;
+    padding: 20px;
 }
 .list-table-format img{
     width: 50px;
+}
+
+.list-table-format button{
+    background-color: tomato;
+    font-size: 15px;
+    color: white;
+    border: none;
+    width:50px;
+    height: 30px;
+    /* padding: .01px .01px; */
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 @media (max-width:600px) {
