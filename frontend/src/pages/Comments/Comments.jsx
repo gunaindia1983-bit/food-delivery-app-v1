@@ -153,7 +153,9 @@ useEffect(()=>{
             <img src={url + "/images/" + item.image} alt="" />
             <h3 >{item.name}</h3>
 
-            <textarea key={index} value={item.reviewComments} disabled={item.isHidden} type="text" onChange={(e) => onChangeHandler(item._id, e.target.value)} placeholder='Tell us about your food[...]
+            <textarea key={index} value={item.reviewComments} disabled={item.isHidden} type="text" onChange={(e) => onChangeHandler(item._id, e.target.value)} 
+                      placeholder='Tell us about your food!!' required>
+            </textarea>
 
 
             <br />
