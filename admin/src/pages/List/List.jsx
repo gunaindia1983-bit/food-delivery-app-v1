@@ -7,6 +7,7 @@ const List = ({url}) => {
 
   const [list, setList] = useState([]);
 
+  console.log("URL in List.jsx", url);
   
 
   const fetchList = async () =>{
@@ -49,25 +50,25 @@ const removeFood = async(foodId) => {
 
 
   return (
-    <div className='list and flex-col'>
-     <p>All foods list</p>
+    <div className='list-and-flex-col'>
+     <h3>All foods list</h3>
      <div className="list-table">
       <div className="list-table-format title">
           <b>Image</b>
           <b>Name</b>
           <b>Category</b>
           <b>Price</b>
-          <b>Action</b>
+          <b>Remove</b>
       </div>
       {list.map((item,index)=>{
         return(
           <div key={index} className="list-table-format">
             <img src={`${url}/images/`+item.image} alt=""/>
 
-            <p className="">{item.name}</p>
-            <p className="">{item.category}</p>
-            <p className="">${item.price}</p>
-            <p onClick={()=> removeFood(item._id)} className="cursor">X</p>
+            <p >{item.name}</p>
+            <p >{item.category}</p>
+            <p >${item.price}</p>
+            <button onClick={()=> removeFood(item._id)} className="cursor">X</button>
           </div>
         )
 
