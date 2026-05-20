@@ -9,31 +9,73 @@
 }
 .my-orders-order{
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 1fr;
+    grid-template-columns: 0.5fr 3fr 1fr 1fr 2fr  2fr 2fr;
+    border-bottom: 0.5px outset tomato;
     align-items: center;
     gap: 30px;
     font-size: 14px;
     padding: 10px 20px;
     color: #454545;
-    border: 1px solid tomato;
+    
+    font-size: 12px;
+    color: gray;
+    
+    
 }
+.my-orders-order .my-orders-order-p{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+
+    
+}
+
+   
+
 .my-orders-order img{
     width: 50px;
 }
 .my-orders-order p span{
-    color: tomato;
+    color: gray;
 }
-.my-orders-order p b{
+.my-orders-order-buttons{
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    cursor: pointer;
     font-weight: 500;
-    color: #454545;
+    gap: 10px
+    
+   
 }
+
+
+
+ .boxed-number{
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
 .my-orders-order button{
     border: none;
     padding: 12px 0px;
     border-radius: 4px;
-    background-color: #ffe1e1;
+    background-color: #4a4a2b6c;
     cursor: pointer;
     color: #454545;
+}
+
+button:active{
+    background-color: lightgray;
+    color: white;
 }
 @media (max-width:900px) {
     .my-orders-order{
